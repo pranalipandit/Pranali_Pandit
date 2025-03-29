@@ -1,4 +1,4 @@
-## UPSC_PCS Question Generator
+## UPSC_PCS_Question_Generator
 
 
 ##Create enviornment.
