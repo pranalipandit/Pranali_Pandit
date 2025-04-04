@@ -408,5 +408,5 @@ if __name__ == "__main__":
     main()
 
 
-## Run the app
- streamlit run app.py
+## Run the app in terminal
+# streamlit run app.py
