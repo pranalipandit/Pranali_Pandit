@@ -9,14 +9,18 @@ GROQ_API_KEY="Your_API_KEy"
 # Import required libraries
 import os
 from typing import List
-from dotenv import load_dotenv
+
 from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field, validator
 
-# Load environment variables from .env file
-load_dotenv()
+
+# Load .env only if GROQ_API_KEY is not already in environment (e.g., in Streamlit Cloud)
+if not os.getenv("GROQ_API_KEY"):
+    from dotenv import load_dotenv
+    load_dotenv()
+
 
 # Define data model for Multiple Choice Questions using Pydantic
 class MCQQuestion(BaseModel):
